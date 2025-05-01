@@ -1,12 +1,12 @@
 import { Body, Controller, Post, UseGuards } from '@nestjs/common';
 import { ThrottlerGuard } from '@nestjs/throttler';
-import { EmailService } from './email.service';
-import { EmailDto } from './dto/email.dto';
+import { EmailService } from 'src/email/email.service';
+import { EmailDto } from 'src/email/dto/email.dto';
 
 @Controller('email')
 @UseGuards(ThrottlerGuard)
 export class EmailController {
-  constructor(private readonly emailService: EmailService) { }
+  constructor(private readonly emailService: EmailService) {}
 
   @Post()
   async sendEmail(@Body() emailDto: EmailDto) {

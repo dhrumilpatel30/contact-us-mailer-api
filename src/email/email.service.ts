@@ -5,7 +5,7 @@ import {
 } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import * as nodemailer from 'nodemailer';
-import { EmailDto } from './dto/email.dto';
+import { EmailDto } from 'src/email/dto/email.dto';
 import Mail from 'nodemailer/lib/mailer';
 
 @Injectable()

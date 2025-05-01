@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
-import { EmailModule } from './email/email.module';
+import { EmailModule } from 'src/email/email.module';
 
 @Module({
   imports: [
@@ -16,4 +16,4 @@ import { EmailModule } from './email/email.module';
     EmailModule,
   ],
 })
-export class AppModule {}
+export class AppModule { }
