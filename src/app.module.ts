@@ -1,11 +1,19 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { ThrottlerModule } from '@nestjs/throttler';
 import { EmailModule } from './email/email.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
-    EmailModule
-  ]
+    ThrottlerModule.forRoot([
+      {
+        ttl: 60000, // 1 minute
+        limit: 5, // 5 requests per minute
+        blockDuration: 6000000, // 100 minutes
+      },
+    ]),
+    EmailModule,
+  ],
 })
-export class AppModule { }
+export class AppModule {}
