@@ -92,6 +92,8 @@ export class EmailService {
 
       await this.transporter.verify();
       await this.transporter.sendMail(mailOptions);
+      // console.log(mailOptions);
+
       this.logger.log(`Email sent successfully to ${data.senderEmail}`);
     } catch (error) {
       this.logger.error('Failed to send email', error);

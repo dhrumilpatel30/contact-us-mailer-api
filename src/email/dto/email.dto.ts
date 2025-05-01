@@ -23,10 +23,10 @@ export class EmailDto {
   @IsEmail({}, { message: 'Please provide a valid email address' })
   email: string;
 
-  @IsNotEmpty()
-  @Matches(/^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/, {
-    message: 'Please provide a valid phone number',
-  })
+  // @IsNotEmpty()
+  // @Matches(/^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/, {
+  //   message: 'Please provide a valid phone number',
+  // })
   mobile: string;
 
   @IsOptional()
